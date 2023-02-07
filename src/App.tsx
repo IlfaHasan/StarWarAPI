@@ -1,5 +1,6 @@
 import react,{useState,useEffect} from 'react';
 import './App.css';
+import logo from './skywalker.jpg';
 
 function App() {
   const[characterName,setCharacterName]=useState();
@@ -10,7 +11,8 @@ useEffect(() => {
 }, [])
   return (
     <div className="App">
-      <h1>Star War</h1>
+      <h1>Star Wars</h1>
+      <img src={logo} height='200px' width='150px' alt='skywalkerPicture'></img>
         <h2>{characterName}</h2>
       
     </div>

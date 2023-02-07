@@ -4,6 +4,6 @@ import App from './App';
 
 test('renders star war heading', () => {
   render(<App />);
-  const linkElement = screen.getByText(/star war/i);
+  const linkElement = screen.getByText(/star wars/i);
   expect(linkElement).toBeInTheDocument();
 });
