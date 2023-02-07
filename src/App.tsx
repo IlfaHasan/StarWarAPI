@@ -1,24 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
+import react,{useState,useEffect} from 'react';
 import './App.css';
 
 function App() {
+  const[characterName,setCharacterName]=useState();
+useEffect(() => {
+  fetch('https://swapi.dev/api/people/1/')
+      .then((res) => res.json())
+      .then((json) => setCharacterName(json.name))
+}, [])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Star War</h1>
+        <h2>{characterName}</h2>
+      
     </div>
   );
 }
